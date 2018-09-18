@@ -37,6 +37,16 @@ def make_board(content):
                 goal_node = node
             elif e == '#':
                 node = Node(1000000,e,False,False)
+            elif e == 'w':
+                node = Node(100,e,False,False)
+            elif e == 'm':
+                node = Node(50,e,False,False)
+            elif e == 'f':
+                node = Node(10,e,False,False)
+            elif e == 'g':
+                node = Node(5,e,False,False)
+            elif e == 'r':
+                node = Node(1,e,False,False)
             else:
                 node = Node(1,e,False,False)
 
@@ -111,7 +121,7 @@ def make_graph():
 
 
 def main():
-    f = open("boards/board-1-2.txt", "r")
+    f = open("boards/board-2-4.txt", "r")
     content = f.read()
     f.close()
     make_board(content)

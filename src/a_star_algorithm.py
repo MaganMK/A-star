@@ -47,7 +47,7 @@ def reconstruct_path(came_from, current):
         current = came_from[current]
         path.append(current)
         if current.name != 'A':
-            current.name = "o"
+            current.name = "+"
 
     return len(path)
 
