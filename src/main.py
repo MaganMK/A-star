@@ -1,4 +1,4 @@
-from src.node import Node
+from node import Node
 
 board = []
 width = 0
@@ -13,20 +13,14 @@ def make_board(content):
 
     for row in rows:
         height += 1
-        elem = row.split(" ")
         temp = []
-        for e in elem:
+        for e in list(row):
 
             if(height == 1):
                 width += 1
 
-            if e == 'S':
-                node = Node(0, 0, "S")
-            elif e == 'G':
-                node = Node(0,0,"G")
-            else:
-                node = Node(0,0,"X")
-
+            node = Node(0,0,e)
+       
             temp.append(node)
         board.append(temp)
 
@@ -84,7 +78,7 @@ def make_graph():
 
 
 def main():
-    f = open("../boards/level1.txt", "r")
+    f = open("boards/board-1-1.txt", "r")
     content = f.read()
     f.close()
     make_board(content)
