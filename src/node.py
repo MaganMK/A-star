@@ -2,14 +2,19 @@
 
 class Node:
 
-    def __init__(self, cost, heuristic_cost, name):
+    def __init__(self, cost, name, isStart, isGoal):
         self.name = name
         self.cost = cost
-        self.heuristic_cost = heuristic_cost
+        self.heuristic_cost = 0
         self.neighbours = []
+        self.isStart = isStart
+        self.isGoal = isGoal
 
-    def addNeighbour(self, node):
+    def add_neighbour(self, node):
         self.neighbours.append(node)
+
+    def add_heuristic_cost(self, cost):
+        self.heuristic_cost = cost
 
     def __str__(self):
         return self.name
