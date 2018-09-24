@@ -1,5 +1,6 @@
 
 
+# Each point on the map will be considered a node
 class Node:
 
     def __init__(self, cost, name, isStart, isGoal):
@@ -10,6 +11,7 @@ class Node:
         self.isStart = isStart
         self.isGoal = isGoal
 
+    # Each node has a set of neighbours
     def add_neighbour(self, node):
         self.neighbours.append(node)
 
@@ -21,3 +23,4 @@ class Node:
 
     def __repr__(self):
         return self.name
+
